@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ATS & SEO Meta Tags -->
+<title>Amina Ramzan | Frontend Software Engineer | Lahore, Pakistan</title>
+<meta name="description" content="Amina Ramzan — Software Engineering student at Virtual University of Pakistan, specialising in HTML, CSS, JavaScript, C/C++ and SQL. Seeking frontend internship opportunities.">
+<meta name="keywords" content="Amina Ramzan, Frontend Developer, Software Engineer, HTML CSS JavaScript, Lahore Pakistan, internship, web developer, Virtual University">
+<meta name="author" content="Amina Ramzan">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Amina Ramzan | Frontend Software Engineer">
+<meta property="og:description" content="Software Engineering student passionate about building efficient, user-friendly web interfaces.">
+<meta property="og:type" content="website">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:        #0C0E0F;
+  --surface:   #141618;
+  --surface2:  #1C1F21;
+  --border:    rgba(255,255,255,0.07);
+  --accent:    #C8F060;
+  --accent2:   #5EEAD4;
+  --white:     #F0EDE8;
+  --muted:     #6B7280;
+  --text:      #D8D4CE;
+  --tag-bg:    rgba(200,240,96,0.08);
+  --tag-color: #A8CC40;
+  --teal-bg:   rgba(94,234,212,0.08);
+  --teal-color:#3DB8A8;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5vw;
+  background: rgba(12,14,15,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Fraunces', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--accent);
+  color: #0C0E0F !important;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase;
+}
+
+/* ── SECTIONS ── */
+section { position: relative; z-index: 1; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10rem 5vw 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative background grid */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,240,96,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,240,96,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 30px; height: 1px;
+  background: var(--accent);
+}
+
+.hero-name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(52px, 9vw, 110px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 0.4rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+
+.hero-name .accent-italic {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.hero-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--text);
+  max-width: 520px;
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0C0E0F;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(200,240,96,0.25);
+}
+
+.btn-secondary {
+  color: var(--white);
+  padding: 12px 28px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Floating status badge */
+.status-badge {
+  position: absolute;
+  bottom: 3rem;
+  right: 5vw;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 12px;
+  color: var(--text);
+  animation: fadeUp 0.6s 0.5s ease both;
+}
+
+.status-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(200,240,96,0.4)} 50%{box-shadow:0 0 0 6px rgba(200,240,96,0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+
+/* ── ABOUT SECTION ── */
+.about {
+  padding: 7rem 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+.about-text h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 1.5rem;
+}
+
+.about-text h2 em { color: var(--accent); font-style: italic; font-weight: 300; }
+
+.about-text p {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.8;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover { border-color: rgba(200,240,96,0.3); }
+
+.stat-num {
+  font-family: 'Fraunces', serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── SKILLS SECTION ── */
+.skills {
+  padding: 7rem 5vw;
+  border-top: 1px solid var(--border);
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.section-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.skill-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.8rem;
+  transition: border-color 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.skill-card:hover { border-color: rgba(200,240,96,0.25); transform: translateY(-3px); }
+.skill-card:hover::before { transform: scaleX(1); }
+
+.skill-card-icon {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.skill-card-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.skill-bar-wrap {
+  height: 3px;
+  background: var(--surface2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+.skill-level-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  letter-spacing: 0.08em;
+}
+
+/* Soft skills row */
+.soft-skills-row {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.soft-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.soft-pill .icon { font-size: 16px; }
+
+/* ── PROJECTS SECTION ── */
+.projects {
+  padding: 7rem 5vw;
+  border-top: 1px solid var(--border);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.project-card:hover { border-color: rgba(200,240,96,0.3); transform: translateY(-4px); }
+
+.project-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  margin-bottom: 1rem;
+}
+
+.project-name {
+  font-family: 'Fraunces', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.5px;
+}
+
+.project-desc {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+
+.project-highlights {
+  list-style: none;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-highlights li {
+  font-size: 12.5px;
+  color: var(--text);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.55;
+}
+
+.project-highlights li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 9px;
+  top: 4px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  border: 1px solid rgba(200,240,96,0.15);
+}
+
+.tag.teal {
+  background: var(--teal-bg);
+  color: var(--teal-color);
+  border-color: rgba(94,234,212,0.15);
+}
+
+.project-link {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.project-link:hover { gap: 10px; }
+
+/* ── EDUCATION SECTION ── */
+.education {
+  padding: 7rem 5vw;
+  border-top: 1px solid var(--border);
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.edu-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.edu-card:hover { border-color: rgba(94,234,212,0.3); }
+
+.edu-card.current { border-color: rgba(200,240,96,0.25); }
+
+.edu-badge {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(200,240,96,0.2);
+}
+
+.edu-badge.ongoing { background: var(--tag-bg); color: var(--tag-color); }
+
+.edu-degree {
+  font-family: 'Fraunces', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 0.4rem;
+  letter-spacing: -0.3px;
+}
+
+.edu-institution {
+  font-size: 13px;
+  color: var(--accent2);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.edu-year {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.edu-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.subject-tag {
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+}
+
+/* ── CONTACT SECTION ── */
+.contact {
+  padding: 7rem 5vw;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
+}
+
+.contact h2 em { color: var(--accent); font-style: italic; font-weight: 300; }
+
+.contact p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-link .link-icon { font-size: 16px; }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-name {
+  font-family: 'Fraunces', serif;
+  font-size: 15px;
+  color: var(--white);
+}
+
+.footer-name span { color: var(--accent); }
+
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* ── CSS-ONLY SCROLL ANIMATIONS ── */
+@keyframes revealUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.reveal {
+  animation: revealUp 0.7s ease both;
+  animation-play-state: paused;
+}
+
+/* Staggered delays for grid children */
+.skills-grid .reveal:nth-child(2) { animation-delay: 0.1s; }
+.skills-grid .reveal:nth-child(3) { animation-delay: 0.18s; }
+.skills-grid .reveal:nth-child(4) { animation-delay: 0.26s; }
+.skills-grid .reveal:nth-child(5) { animation-delay: 0.34s; }
+.skills-grid .reveal:nth-child(6) { animation-delay: 0.42s; }
+.projects-grid .reveal:nth-child(2) { animation-delay: 0.12s; }
+.projects-grid .reveal:nth-child(3) { animation-delay: 0.24s; }
+.edu-grid .reveal:nth-child(2) { animation-delay: 0.12s; }
+.edu-grid .reveal:nth-child(3) { animation-delay: 0.24s; }
+
+/* Use CSS animation-timeline when supported (modern browsers) */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+    animation-play-state: running;
+  }
+}
+
+/* Fallback: just show everything for older browsers */
+@supports not (animation-timeline: view()) {
+  .reveal { opacity: 1; transform: none; animation: none; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .about { grid-template-columns: 1fr; gap: 3rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .edu-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .status-badge { position: static; margin-top: 2rem; display: inline-flex; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav>
+  <div class="nav-logo">Amina <span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero" id="home">
+  <div class="hero-eyebrow">Frontend Software Engineer</div>
+
+  <h1 class="hero-name">
+    Amina<br><span class="accent-italic">Ramzan</span>
+  </h1>
+
+  <p class="hero-title">// HTML · CSS · JavaScript · C++ · SQL · Lahore, Pakistan</p>
+
+  <p class="hero-desc">
+    Software Engineering student passionate about crafting efficient, user-friendly interfaces. A quick learner with strong communication and teamwork skills — actively seeking a frontend internship to contribute and grow.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">View My Work</a>
+    <a href="#contact" class="btn-secondary">Get In Touch</a>
+  </div>
+
+  <div class="status-badge">
+    <span class="status-dot"></span>
+    Open to Internship Opportunities
+  </div>
+</header>
+
+<!-- ══ ABOUT ══ -->
+<section class="about" id="about">
+  <div class="about-text reveal">
+    <div class="section-eyebrow">// about me</div>
+    <h2>Turning ideas into <em>real</em> interfaces</h2>
+    <p>
+      I'm a final-year Software Engineering student at the Virtual University of Pakistan (Lahore Campus), on track to graduate in 2027. My passion lies in frontend development — making things look great and work seamlessly.
+    </p>
+    <p>
+      I thrive in team settings, communicate clearly, and manage my time effectively to meet deadlines. I'm always learning new tools and techniques to sharpen my craft.
+    </p>
+  </div>
+  <div class="about-stats reveal">
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Projects Built</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Technologies</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2027</div>
+      <div class="stat-label">Expected Grad</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Drive to Learn</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section class="skills" id="skills">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">// what i know</div>
+      <h2 class="section-title">Skills & Tools</h2>
+    </div>
+  </div>
+
+  <div class="skills-grid">
+    <article class="skill-card reveal">
+      <span class="skill-card-icon">🌐</span>
+      <div class="skill-card-name">HTML5</div>
+      <p class="skill-card-desc">Semantic, accessible markup with proper structure for both humans and search engines.</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:88%"></div></div>
+      <div class="skill-level-label">Proficient</div>
+    </article>
+
+    <article class="skill-card reveal">
+      <span class="skill-card-icon">🎨</span>
+      <div class="skill-card-name">CSS3</div>
+      <p class="skill-card-desc">Responsive layouts, Flexbox, animations, and clean visual design principles.</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:82%"></div></div>
+      <div class="skill-level-label">Proficient</div>
+    </article>
+
+    <article class="skill-card reveal">
+      <span class="skill-card-icon">⚡</span>
+      <div class="skill-card-name">JavaScript</div>
+      <p class="skill-card-desc">DOM manipulation, event handling, form validation, and interactive UI logic.</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:55%"></div></div>
+      <div class="skill-level-label">Developing</div>
+    </article>
+
+    <article class="skill-card reveal">
+      <span class="skill-card-icon">⚙️</span>
+      <div class="skill-card-name">C / C++</div>
+      <p class="skill-card-desc">Strong programming fundamentals — problem solving, algorithms, and logic building.</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:65%"></div></div>
+      <div class="skill-level-label">Intermediate</div>
+    </article>
+
+    <article class="skill-card reveal">
+      <span class="skill-card-icon">🗄️</span>
+      <div class="skill-card-name">SQL</div>
+      <p class="skill-card-desc">Relational database fundamentals, queries, and data management concepts.</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:50%"></div></div>
+      <div class="skill-level-label">Developing</div>
+    </article>
+
+    <article class="skill-card reveal" style="border-style: dashed; opacity: 0.7;">
+      <span class="skill-card-icon">📖</span>
+      <div class="skill-card-name">Currently Learning</div>
+      <p class="skill-card-desc">React.js · Git & GitHub · Responsive Design · Tailwind CSS</p>
+      <div class="skill-bar-wrap"><div class="skill-bar" style="width:30%; background: var(--accent2);"></div></div>
+      <div class="skill-level-label">In Progress</div>
+    </article>
+  </div>
+
+  <div class="soft-skills-row reveal">
+    <div class="soft-pill"><span class="icon">🤝</span> Teamwork</div>
+    <div class="soft-pill"><span class="icon">⏱️</span> Time Management</div>
+    <div class="soft-pill"><span class="icon">💬</span> Communication</div>
+    <div class="soft-pill"><span class="icon">📚</span> Fast Learner</div>
+    <div class="soft-pill"><span class="icon">🎯</span> Detail-Oriented</div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section class="projects" id="projects">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">// what i've built</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <article class="project-card reveal">
+      <div class="project-num">01 // Portfolio</div>
+      <h3 class="project-name">Personal Portfolio Website</h3>
+      <p class="project-desc">A fully responsive personal portfolio designed and coded from scratch to showcase skills, education, and projects as a professional online presence.</p>
+      <ul class="project-highlights">
+        <li>Multi-section layout using semantic HTML5 — hero, about, skills, projects, contact.</li>
+        <li>Responsive CSS with Flexbox and media queries for mobile and desktop.</li>
+        <li>Consistent visual hierarchy with intentional typography and colour choices.</li>
+      </ul>
+      <div class="project-tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">Flexbox</span>
+        <span class="tag">Responsive</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-card reveal">
+      <div class="project-num">02 // Form</div>
+      <h3 class="project-name">Interactive Registration Form</h3>
+      <p class="project-desc">A fully styled and validated user registration form with real-time input feedback, demonstrating understanding of form UX best practices and front-end validation.</p>
+      <ul class="project-highlights">
+        <li>Client-side validation with JavaScript — email format, required fields, password strength.</li>
+        <li>Custom CSS focus states, error highlights, and success indicators for clear UX.</li>
+        <li>Accessible markup with proper label associations for screen readers.</li>
+      </ul>
+      <div class="project-tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag teal">Validation</span>
+        <span class="tag teal">Accessibility</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project-card reveal">
+      <div class="project-num">03 // App</div>
+      <h3 class="project-name">Browser-Based Calculator</h3>
+      <p class="project-desc">A functional calculator built with vanilla JavaScript, handling arithmetic operations, keyboard input, and edge cases like division by zero and chained operations.</p>
+      <ul class="project-highlights">
+        <li>Core arithmetic logic using JavaScript event listeners and DOM manipulation.</li>
+        <li>CSS Grid button layout with hover and active states for tactile feel.</li>
+        <li>Handles edge cases: decimal inputs, chained operations, clear state.</li>
+      </ul>
+      <div class="project-tags">
+        <span class="tag">HTML5</span>
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag teal">CSS Grid</span>
+        <span class="tag teal">DOM API</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section class="education" id="education">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-eyebrow">// my background</div>
+      <h2 class="section-title">Education</h2>
+    </div>
+  </div>
+
+  <div class="edu-grid">
+
+    <article class="edu-card current reveal">
+      <div class="edu-badge ongoing">● Currently Enrolled</div>
+      <h3 class="edu-degree">Bachelor's in Software Engineering</h3>
+      <div class="edu-institution">Virtual University of Pakistan</div>
+      <div class="edu-year">Lahore Campus · 2023 – 2027</div>
+      <div class="edu-subjects">
+        <span class="subject-tag">Web Dev</span>
+        <span class="subject-tag">OOP</span>
+        <span class="subject-tag">Data Structures</span>
+        <span class="subject-tag">Databases</span>
+        <span class="subject-tag">OS</span>
+      </div>
+    </article>
+
+    <article class="edu-card reveal">
+      <div class="edu-badge">Completed</div>
+      <h3 class="edu-degree">Intermediate in ICS</h3>
+      <div class="edu-institution">BISE Lahore</div>
+      <div class="edu-year">Pre-Engineering / Computer Science</div>
+      <div class="edu-subjects">
+        <span class="subject-tag">Computer Science</span>
+        <span class="subject-tag">Mathematics</span>
+        <span class="subject-tag">Physics</span>
+      </div>
+    </article>
+
+    <article class="edu-card reveal">
+      <div class="edu-badge">Completed</div>
+      <h3 class="edu-degree">Matriculation</h3>
+      <div class="edu-institution">BISE Lahore</div>
+      <div class="edu-year">Computer Science Stream</div>
+      <div class="edu-subjects">
+        <span class="subject-tag">Computer Science</span>
+        <span class="subject-tag">Mathematics</span>
+        <span class="subject-tag">Science</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="contact" id="contact">
+  <div class="contact-inner reveal">
+    <div class="section-eyebrow" style="margin-bottom:1rem;">// let's connect</div>
+    <h2>Let's work <em>together</em></h2>
+    <p>I'm actively looking for frontend internship opportunities. Whether you have a role, a project, or just want to say hello — my inbox is always open.</p>
+
+    <div class="contact-links">
+      <a href="mailto:malikramzan241632@gmail.com" class="contact-link">
+        <span class="link-icon">✉️</span>
+        malikramzan241632@gmail.com
+      </a>
+      <a href="tel:+923294641575" class="contact-link">
+        <span class="link-icon">📞</span>
+        +92 329 464 1575
+      </a>
+      <a href="https://linkedin.com/in/amina-ramzan" class="contact-link" target="_blank" rel="noopener">
+        <span class="link-icon">💼</span>
+        LinkedIn
+      </a>
+      <a href="https://github.com/amina-ramzan" class="contact-link" target="_blank" rel="noopener">
+        <span class="link-icon">🐙</span>
+        GitHub
+      </a>
+    </div>
+
+    <a href="mailto:malikramzan241632@gmail.com" class="btn-primary">Send Me an Email →</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-name">Amina <span>Ramzan</span></div>
+  <div class="footer-copy">© 2026 · Lahore, Pakistan · Frontend Engineer</div>
+</footer>
+
+
+
+</body>
+</html>
